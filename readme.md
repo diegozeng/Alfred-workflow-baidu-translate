@@ -1,4 +1,4 @@
-#Alfred workflow baidu translate  (v1.0)
+#Alfred workflow baidu translate  (v2.0)
 ----------------------------------
 
 ##Function
@@ -24,6 +24,13 @@ When the input language is Chinese, the aimed translate language will be set to 
 ![image](CH－EN.png)
 3. Japanese to Chinese
 ![image](JP－CH.png)
+ 
+----------------------------------------- 
+## V2.0 Updated on July 17th, 2014
+
+1. Add notification when press "return".
+2. Redirect to author's home page after pressing "return".
+3. Copy website link of author's home page automatically.
  
 
 

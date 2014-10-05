@@ -31,7 +31,11 @@ When the input language is Chinese, the aimed translate language will be set to 
 1. Add notification when press "return".
 2. Redirect to author's home page after pressing "return".
 3. Copy website link of author's home page automatically.
+
+Workflow:
+![image](workflow_baidutranslate.png)
  
+
 
 
 

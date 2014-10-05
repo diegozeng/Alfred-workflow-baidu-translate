@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.diegozeng.baidu_translate</string>
+	<key>connections</key>
+	<dict>
+		<key>0D169995-7A92-45A3-9442-9D8E5D897C97</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1CD906D0-824C-4B55-ACC5-B4560884FC69</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7DA2EA31-5376-4570-AB83-F5354EEB8A3C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>26696673-EE38-48BA-9BC0-4B9CD0E1E1FF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>diegozeng</string>
+	<key>description</key>
+	<string>Utilize baidu translator api, detecting different input language automatically.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>baidu translate</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>1CD906D0-824C-4B55-ACC5-B4560884FC69</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>bt</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>require ('workflows.php');
+$wf = new Workflows ();
+$query = "{query}";
+
+
+define("TRANS_QUERY_URL", "http://openapi.baidu.com/public/2.0/bmt/translate?client_id=9WVFIE2eaqe05vjCqBxAU40U&amp;q=$query&amp;from=auto&amp;to=auto");
+
+$json = json_decode ($wf-&gt;request (TRANS_QUERY_URL));
+
+foreach ($json-&gt;trans_result as $translation):
+$result['src'] = $translation-&gt;src;
+$result['dst'] = $translation-&gt;dst;
+$wf-&gt;result(1, 'https://diegozeng.github.io', $result['dst'], $query, 'icon.png', 'yes');
+endforeach;
+
+echo $wf-&gt;toxml ();</string>
+				<key>subtext</key>
+				<string>Please type something...</string>
+				<key>title</key>
+				<string>baidu translate</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0D169995-7A92-45A3-9442-9D8E5D897C97</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>7DA2EA31-5376-4570-AB83-F5354EEB8A3C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>The website link copied!</string>
+				<key>title</key>
+				<string>Welcome to author's homepage!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>26696673-EE38-48BA-9BC0-4B9CD0E1E1FF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0D169995-7A92-45A3-9442-9D8E5D897C97</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>1CD906D0-824C-4B55-ACC5-B4560884FC69</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>26696673-EE38-48BA-9BC0-4B9CD0E1E1FF</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+		<key>7DA2EA31-5376-4570-AB83-F5354EEB8A3C</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://diegozeng.github.io</string>
+</dict>
+</plist>

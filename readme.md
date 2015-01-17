@@ -29,13 +29,15 @@ When the input language is Chinese, the aimed translate language will be set to 
 ## V2.0 Updated on July 17th, 2014
 
 1. Add notification when press "return".
-2. Redirect to author's home page after pressing "return".
+2. Redirect to author's home page after pressing "return"
 3. Copy website link of author's home page automatically.
 
 Workflow:
 ![image](workflow_baidutranslate.png)
- 
+----------------------------------------- 
+## Updated on January 16th, 2015
 
+Now the workflow is available on <a href="http://www.alfredworkflow.com/">Alfred2 Workflows List</a>.
 
 
 

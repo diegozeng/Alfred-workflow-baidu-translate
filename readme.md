@@ -39,6 +39,12 @@ Workflow:
 
 Now the workflow is available on <a href="http://www.alfredworkflow.com/">Alfred2 Workflows List</a>.
 
+----------------------------------------- 
+## Updated on April 14th, 2016
+
+Migrate to most updated Baidu translate API.
+
+
 
 
 
